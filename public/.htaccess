@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /locadora_mvc/public/
+
+RewriteRule ^api/(.*)$ api.php?url=$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
